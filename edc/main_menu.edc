@@ -1,0 +1,509 @@
+// compile: edje_cc edje_example.edc
+images {
+	set {
+	   name: "Background.png";
+	   image { 
+	      image: "./pkgfiles/PSC_IMAGES/BACKGROUND.PNG" RAW;
+	      size: 0 0 1280 720;
+	   }
+	}
+	set {
+	   name: "Menu.png";
+	   image { 
+	      image: "./pkgfiles/PSC_IMAGES/MAIN_MENU.PNG" RAW;
+	      size: 0 0 1280 720;
+	   }
+	}
+
+	set {
+	   name: "Application.png";
+	   image { 
+	      image: "./pkgfiles/ICONS/APPLICATION_ICON.PNG" RAW;
+	      size: 0 0 320 176;
+	   }
+	}
+	set {
+	   name: "BManager.png";
+	   image { 
+	      image: "./pkgfiles/ICONS/BMANAGER_ICON.PNG" RAW;
+	      size: 0 0 320 176;
+	   }
+	}
+	set {
+	   name: "Games.png";
+	   image { 
+	      image: "./pkgfiles/ICONS/GAME_ICON.PNG" RAW;
+	      size: 0 0 320 176;
+	   }
+	}
+	set {
+	   name: "Media.png";
+	   image { 
+	      image: "./pkgfiles/ICONS/MEDIA_ICON.PNG" RAW;
+	      size: 0 0 320 176;
+	   }
+	}
+	set {
+	   name: "System.png";
+	   image { 
+	      image: "./pkgfiles/ICONS/SYSTEM_ICON.PNG" RAW;
+	      size: 0 0 320 176;
+	   }
+	}
+	set {
+	   name: "Option_Icon.png";
+	   image { 
+	      image: "./pkgfiles/ICONS/OPTION_ICON.PNG" RAW;
+	      size: 0 0 320 176;
+	   }
+	}
+	
+	
+	set {
+	   name: "Cross.png";
+	   image { 
+	      image: "./pkgfiles/BUTTONS/BTN_CROSS.PNG" RAW;
+	      size: 0 0 26 26;
+	   }
+	}
+	
+	set {
+	   name: "Circle.png";
+	   image { 
+	      image: "./pkgfiles/BUTTONS/BTN_CIRCLE.PNG" RAW;
+	      size: 0 0 26 26;
+	   }
+	}
+	
+	set {
+	   name: "Arrows.png";
+	   image { 
+	      image: "./pkgfiles/BUTTONS/BTN_ARROWS.PNG" RAW;
+	      size: 0 0 26 26;
+	   }
+	}
+	
+	set {
+	   name: "Start.png";
+	   image { 
+	      image: "./pkgfiles/BUTTONS/BTN_START.PNG" RAW;
+	      size: 0 0 26 26;
+	   }
+	}
+}
+
+collections {
+#include "font.edc"
+   group {
+      name: "menu";
+
+      parts {
+         part {
+            name: "background";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "Background.png";
+                  middle:  DEFAULT;
+	      }
+
+	      rel1 {
+                  relative: 0.0 0.0;
+                  offset: 0 0;
+               }
+              rel2 {
+                  relative: 1.0 1.0;
+                  offset: 0 0;
+              }
+	   }
+         }
+         part {
+            name: "menu_img";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "Menu.png";
+                  middle:  DEFAULT;
+	      }
+
+	      rel1 {
+                  relative: 0.0 0.0;
+                  offset: 0 0;
+               }
+              rel2 {
+                  relative: 1.0 1.0;
+                  offset: 0 0;
+              }
+	   }
+         }
+         
+         part {
+            name: "application";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "Application.png";
+                  middle:  DEFAULT;
+	      }
+
+	      rel1 {
+                  relative: 0.1 0.25972;
+                  offset: 0 0;
+              }
+              rel2 {
+                  relative: 0.35 0.50416;
+                  offset: 0 0;
+              }
+	   }
+         }
+         part {
+            name: "backup_manager";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "BManager.png";
+                  middle:  DEFAULT;
+	      }
+
+	      rel1 {
+                  relative: 0.37421875 0.25972;
+                  offset: 0 0;
+               }
+              rel2 {
+                  relative: 0.625 0.50416;
+                  offset: 0 0;
+              }
+	   }
+         }
+         part {
+            name: "games";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "Games.png";
+                  middle:  DEFAULT;
+	      }
+
+	      rel1 {
+                  relative: 0.65 0.25972;
+                  offset: 0 0;
+               }
+              rel2 {
+                  relative: 0.9 0.50416;
+                  offset: 0 0;
+              }
+	   }
+         }
+         part {
+            name: "media";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "Media.png";
+                  middle:  DEFAULT;
+	      }
+
+	      rel1 {
+                  relative: 0.1 0.5445;
+                  offset: 0 0;
+               }
+              rel2 {
+                  relative: 0.35 0.788;
+                  offset: 0 0;
+              }
+	   }
+         }
+         part {
+            name: "system";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "System.png";
+                  middle:  DEFAULT;
+	      }
+
+	      rel1 {
+                  relative: 0.37421875 0.5445;
+                  offset: 0 0;
+               }
+              rel2 {
+                  relative: 0.625 0.788;
+                  offset: 0 0;
+              }
+	   }
+         }
+         part {
+            name: "option";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "Option_Icon.png";
+                  middle:  DEFAULT;
+	      }
+
+	      rel1 {
+                  relative: 0.65 0.5445;
+                  offset: 0 0;
+               }
+              rel2 {
+                  relative: 0.9 0.788;
+                  offset: 0 0;
+              }
+	   }
+         }
+         
+         part {
+            name: "cross_img";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "Cross.png";
+                  middle:  DEFAULT;
+	      }
+	      fill {
+	      }
+	      rel1 {
+                  relative: 0.2890625 0.83;
+                  offset: 0 0;
+               }
+              rel2 {
+                  relative: 0.309375 0.8674;
+                  offset: 0 0;
+              }
+	   }
+         }
+         
+         part {
+            name: "circle_img";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "Circle.png";
+                  middle:  DEFAULT;
+	      }
+	      fill {
+	      }
+	      rel1 {
+                  relative: 0.453125 0.83;
+                  offset: 0 0;
+               }
+              rel2 {
+                  relative: 0.4734375 0.8674;
+                  offset: 0 0;
+              }
+	   }
+         }
+         
+         part {
+            name: "start_img";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "Arrows.png";
+                  middle:  DEFAULT;
+	      }
+	      fill {
+	      }
+	      rel1 {
+                  relative: 0.6015625 0.83;
+                  offset: 0 0;
+               }
+              rel2 {
+                  relative: 0.621875 0.8674;
+                  offset: 0 0;
+              }
+	   }
+         }
+         
+         part {
+            name: "arrows_img";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "Start.png";
+                  middle:  DEFAULT;
+	      }
+	      fill {
+	      }
+	      rel1 {
+                  relative: 0.765625 0.83;
+                  offset: 0 0;
+               }
+              rel2 {
+                  relative: 0.7859375 0.8674;
+                  offset: 0 0;
+              }
+	   }
+         }
+         //text
+         part {
+            name: "cross_text";
+            type: TEXT;
+
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+               rel1 { 
+                  relative: -0.309375 0.7;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+
+               text {
+                  font: "SCE PS3 LATIN"; 
+                  size: 16;
+                  size_range: 10 16;
+                  text: "Choose";
+               }
+            }
+         }
+
+         part {
+            name: "error_text";
+            type: TEXT;
+
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+
+               rel1 { 
+                  relative: -0.4 -0.4;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+
+               text {
+                  font: "SCE PS3 LATIN"; 
+                  size: 16;
+                  size_range: 10 16;
+                  text: "null";
+               }
+            }
+         }
+         
+         part {
+            name: "circle_text";
+            type: TEXT;
+
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+
+               rel1 { 
+                  relative: 0 0.7;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+
+               text {
+                  font: "SCE PS3 LATIN"; 
+                  size: 16;
+                  size_range: 10 16;
+                  text: "Back";
+               }
+            }
+         }
+         
+         part {
+            name: "arrows_text";
+            type: TEXT;
+
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+               rel1 { 
+                  relative: 0.31 0.7;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+
+               text {
+                  font: "SCE PS3 LATIN"; 
+                  size: 16;
+                  size_range: 10 16;
+                  text: "Select";
+               }
+            }
+         }
+         
+         part {
+            name: "start_text";
+            type: TEXT;
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+               rel1 { 
+                  relative: 0.62 0.7;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+               text {
+                  font: "SCE PS3 LATIN";
+                  size: 16;
+                  size_range: 10 16;
+                  text: "Exit";
+               }
+            }
+         }
+        
+      }
+   }
+}
+
+

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<elements n="1"></elements>
+
+<app>
+ <NameApp name="Blue-Leaves" />
+ <Version v="0.1"/>
+ <Link link="http://my_web_server/Blue-Leaves.p3t"></Link>
+ <Pkg file="Blue-Leaves.p3t"></ImgLink>
+ <Image img="Theme.PNG"></Image>
+ <Type type="2"></Type>
+</app>
+
+

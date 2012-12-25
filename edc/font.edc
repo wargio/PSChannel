@@ -1,0 +1,6 @@
+//Fonts :D
+fonts {
+   font: "./pkgfiles/Fonts/SCE-PS3-SR-R-LATIN.TTF" "SCE PS3 LATIN";
+   font: "./pkgfiles/Fonts/GOODTIME.ttf" "GoodTimes";
+}
+

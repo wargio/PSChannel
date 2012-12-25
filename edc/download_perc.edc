@@ -1,0 +1,52 @@
+//
+collections {
+#include "font.edc"
+   group {
+      name: "download_perc";
+      parts {
+      part {
+            name: "bar";
+            type: RECT;
+
+            description {
+               state: "default" 0.0;
+               color: 0 0 0 0;
+
+               rel1 {
+                  relative: 0 0;
+                  offset: 0 0;
+               }
+               rel2 {
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+            }
+         }
+      
+      
+         part {
+            name: "d_perc_text";
+            type: TEXT;
+            description {
+               state: "default" 0.0;
+               color: 0 0 0 255;
+               rel1 { 
+                  relative: 0 -0.26;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+               text {
+                  font: "SCE PS3 LATIN";
+                  align: 0.5 0.5;
+                  size: 14;
+                  size_range: 10 14;
+                  text: " ";
+               }
+            }
+         }
+      }
+   }
+}

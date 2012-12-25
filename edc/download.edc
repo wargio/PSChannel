@@ -1,0 +1,388 @@
+// compile: edje_cc main_menu_bar.edc
+images {
+	set {
+	   name: "dmask.png";
+	   image { 
+	      image: "./pkgfiles/PSC_IMAGES/DOWNLOAD_MASK.PNG" RAW;
+	      size: 0 0 40 220;
+	   }
+	}
+	set {
+	   name: "Cross.png";
+	   image { 
+	      image: "./pkgfiles/BUTTONS/BTN_CROSS.PNG" RAW;
+	      size: 0 0 26 26;
+	   }
+	}
+	
+	set {
+	   name: "Circle.png";
+	   image { 
+	      image: "./pkgfiles/BUTTONS/BTN_CIRCLE.PNG" RAW;
+	      size: 0 0 26 26;
+	   }
+	}
+
+}
+
+collections {
+#include "font.edc"
+
+   group {
+      name: "download_mask";
+      parts {
+         part {
+            name: "download_img";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "dmask.png";
+                  middle:  DEFAULT;
+	      }
+
+	      rel1 {
+                  relative: 0.0 0.0;
+                  offset: 0 0;
+              }
+              rel2 {
+                  relative: 1 1;
+                  offset: 0 0;
+              }
+	   }
+         }
+
+         part {
+            name: "bar";
+            type: RECT;
+
+            description {
+               state: "default" 0.0;
+               color: 112 0 0 255;
+
+               rel1 {
+                  relative: 0.1 0.29;
+                  offset: 0 0;
+               }
+               rel2 {
+                  relative: 0.9 0.48;
+                  offset: 0 0;
+               }
+            }
+         }
+         
+         part {
+            name: "d_cross_text";
+            type: TEXT;
+            effect: OUTLINE;
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+               rel1 { 
+                  relative: 0.17 0.26;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+               text {
+                  font: "SCE PS3 LATIN";
+                  align: 0 0.5;
+                  size: 16;
+                  size_range: 10 16;
+                  text: "Download";
+               }
+            }
+         }
+
+         part {
+            name: "d_circle_text";
+            type: TEXT;
+            effect: OUTLINE;
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+               rel1 { 
+                  relative: 0.17 0.68;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+               text {
+                  font: "SCE PS3 LATIN";
+                  align: 0 0.5;
+                  size: 16;
+                  size_range: 10 16;
+                  text: "Back";
+               }
+            }
+         }
+
+         part {
+            name: "cross_img";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "Cross.png";
+                  middle:  DEFAULT;
+	      }
+	      fill {
+	      }
+	      rel1 {
+                  relative: 0.075 0.5681;
+                  offset: 0 0;
+               }
+              rel2 {
+                  relative: 0.1375 0.6818;
+                  offset: 0 0;
+              }
+	   }
+         }
+         
+         part {
+            name: "circle_img";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "Circle.png";
+                  middle:  DEFAULT;
+	      }
+	      fill {
+	      }
+	      rel1 {
+                  relative: 0.075 0.7818;
+                  offset: 0 0;
+               }
+              rel2 {
+                  relative: 0.1375 0.8954;
+                  offset: 0 0;
+              }
+	   }
+         }
+
+
+         part {
+            name: "d_name_text";
+            type: TEXT;
+//            effect: OUTLINE;
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+               rel1 { 
+                  relative: 0 -0.6;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+               text {
+                  font: "SCE PS3 LATIN";
+                  align: 0.5 0.5;
+                  size: 14;
+                  size_range: 10 14;
+                  text: "download_element_name";
+               }
+            }
+         }
+      }
+   }
+//----------------------------------------------------------------------------
+   group {
+      name: "download_mask_ask";
+      parts {
+         part {
+            name: "download_img";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "dmask.png";
+                  middle:  DEFAULT;
+	      }
+
+	      rel1 {
+                  relative: 0.0 0.0;
+                  offset: 0 0;
+              }
+              rel2 {
+                  relative: 1 1;
+                  offset: 0 0;
+              }
+	   }
+         }
+         
+         part {
+            name: "d_cross_text";
+            type: TEXT;
+            effect: OUTLINE;
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+               rel1 { 
+                  relative: 0.17 0.26;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+               text {
+                  font: "SCE PS3 LATIN";
+                  align: 0 0.5;
+                  size: 16;
+                  size_range: 10 16;
+                  text: "Exit to XMB";
+               }
+            }
+         }
+
+         part {
+            name: "d_circle_text";
+            type: TEXT;
+            effect: OUTLINE;
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+               rel1 { 
+                  relative: 0.17 0.68;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+               text {
+                  font: "SCE PS3 LATIN";
+                  align: 0 0.5;
+                  size: 16;
+                  size_range: 10 16;
+                  text: "Back";
+               }
+            }
+         }
+
+         part {
+            name: "cross_img";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "Cross.png";
+                  middle:  DEFAULT;
+	      }
+	      fill {
+	      }
+	      rel1 {
+                  relative: 0.075 0.5681;
+                  offset: 0 0;
+               }
+              rel2 {
+                  relative: 0.1375 0.6818;
+                  offset: 0 0;
+              }
+	   }
+         }
+         
+         part {
+            name: "circle_img";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "Circle.png";
+                  middle:  DEFAULT;
+	      }
+	      fill {
+	      }
+	      rel1 {
+                  relative: 0.075 0.7818;
+                  offset: 0 0;
+               }
+              rel2 {
+                  relative: 0.1375 0.8954;
+                  offset: 0 0;
+              }
+	   }
+         }
+
+
+         part {
+            name: "d_name_text";
+            type: TEXT;
+//            effect: OUTLINE;
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+               rel1 { 
+                  relative: 0 -0.6;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+               text {
+                  font: "SCE PS3 LATIN";
+                  align: 0.5 0.5;
+                  size: 14;
+                  size_range: 10 14;
+                  text: "Download Completed!";
+               }
+            }
+         }
+
+         part {
+            name: "d_name_text2";
+            type: TEXT;
+//            effect: OUTLINE;
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+               rel1 { 
+                  relative: 0 -0.26;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+               text {
+                  font: "SCE PS3 LATIN";
+                  align: 0.5 0.5;
+                  size: 14;
+                  size_range: 10 14;
+                  text: "Do you want to exit to the XMB?";
+               }
+            }
+         }
+
+      }
+   }
+}
+
+

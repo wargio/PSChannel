@@ -1,0 +1,99 @@
+// compile: edje_cc main_menu_bar.edc
+images {
+	set {
+	   name: "Bar.png";
+	   image { 
+	      image: "./pkgfiles/PSC_IMAGES/BAR.PNG" RAW;
+	      size: 0 0 320 176;
+	   }
+	}
+}
+
+collections {
+#include "font.edc"
+   group {
+      name: "main_menu_bar";
+
+      parts {
+         part {
+            name: "bar_img";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "Bar.png";
+                  middle:  DEFAULT;
+	      }
+
+	      rel1 {
+                  relative: 0.0 0.0;
+                  offset: 0 0;
+              }
+              rel2 {
+                  relative: 1 1;
+                  offset: 0 0;
+              }
+	   }
+         }
+
+         part {
+            name: "menu_text";
+            type: TEXT;
+            effect: OUTLINE;
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+               rel1 { 
+                  relative: +0.05 0.71;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+               text {
+                  font: "SCE PS3 LATIN";
+                  align: 0 0.5;
+                  size: 16;
+                  size_range: 10 16;
+                  text: "text";
+               }
+            }
+         }
+                  
+         part {
+            name: "app_type_text";
+            type: TEXT;
+            effect: OUTLINE;
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+               rel1 { 
+                  relative: 0.7 0.1;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+               text {
+                  font: "SCE PS3 LATIN";
+                  align: 0 0;
+                  size: 14;
+                  size_range: 8 14;
+                  text: "text";
+               }
+            }
+         }
+         
+         
+      }
+   }
+   
+}
+
+
