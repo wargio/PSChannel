@@ -35,3 +35,7 @@ you need RSXGL and EFL libs for PSL1GHT
 
 just run ./build_psc.sh
 
+Missing font
+------------
+
+SCE-PS3-SR-R-LATIN.TTF is not included.
