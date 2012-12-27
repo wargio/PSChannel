@@ -90,6 +90,30 @@ collections {
             }
          }
          
+         part {
+            name: "app_version_text";
+            type: TEXT;
+            effect: OUTLINE;
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+               rel1 { 
+                  relative: 0.1 0.1;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+               text {
+                  font: "SCE PS3 LATIN";
+                  align: 0 0;
+                  size: 12;
+                  text: "text";
+               }
+            }
+         }
          
       }
    }

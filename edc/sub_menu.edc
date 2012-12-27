@@ -299,6 +299,31 @@ collections {
             }
          }
         
+
+         part {
+            name: "page_of";
+            type: TEXT;
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+               rel1 { 
+                  relative: -0.8 0.7;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+               text {
+                  font: "SCE PS3 LATIN";
+                  size: 16;
+                  size_range: 10 16;
+                  text: "null";
+               }
+            }
+         }
+
       }
    }
 }

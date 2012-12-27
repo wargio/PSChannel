@@ -221,6 +221,7 @@ Eina_Bool delete_info(void *data){
 
 		override_text(&bar, "menu_text", Categories_Names[y*3+x].c_str());
 		override_text(&bar, "app_type_text", "");
+		override_text(&bar, "app_version_text", "");
 		draw_edj(&bar, Cursor_X[x], Cursor_Y[y]);
 		draw_edj(&download, (REAL_WIDTH-(REAL_WIDTH*0.3125))/2, (REAL_HEIGHT-(REAL_HEIGHT*0.3055))/2);
 		draw_edj(&download_perc, (REAL_WIDTH-(REAL_WIDTH*0.3125))/2, (REAL_HEIGHT-(REAL_HEIGHT*0.3055))/2);
@@ -268,6 +269,7 @@ static void user_menu_handler(void *data, Evas *e, Evas_Object *obj, void *event
 			show_edj(&bar);
 			app=0;
 			override_text(&bar, "app_type_text", "");
+			override_text(&bar, "app_version_text", "");
 		}else{
 			is_downloading = false;
 			is_download = false;
@@ -299,6 +301,20 @@ static void user_menu_handler(void *data, Evas *e, Evas_Object *obj, void *event
 		}else if(app+(y*3+x) < Apps[category].n_elem){
 			override_text(&download, "d_name_text", Apps[category].name[app+(y*3+x)].c_str());
 			override_text(&download_perc, "d_perc_text", " ");
+/*
+		// uncomment this only if you have in the xml the file size (you need to edit also application.h and .cpp
+			char dst[100];
+			if(Apps[category].file_size[app+(y*3+x)]>1000000000)
+				sprintf(dst,"%.2f Gb",1.*Apps[category].file_size[app+(y*3+x)]/1000000000);
+			else if(Apps[category].file_size[app+(y*3+x)]>1000000)
+				sprintf(dst,"%.2f Mb",1.*Apps[category].file_size[app+(y*3+x)]/1000000);
+			else if(Apps[category].file_size[app+(y*3+x)]>1000)
+				sprintf(dst,"%.2f Kb",1.*Apps[category].file_size[app+(y*3+x)]/1000);
+			else
+				sprintf(dst,"%d Bytes",1.*Apps[category].file_size[app+(y*3+x)]);
+			override_text(&download_perc, "d_perc_text", dst);
+
+*/
 			show_edj(&download);
 			show_edj(&download_perc);
 			show_obj(down);
@@ -335,6 +351,10 @@ static void user_menu_handler(void *data, Evas *e, Evas_Object *obj, void *event
 			if(app > Apps[category].n_elem-1)
 				app -=6;
 			override_text(&bar, "menu_text", (app+(y*3+x) < Apps[category].n_elem) ? (Apps[category].name[app+(y*3+x)].c_str()) : "" );
+			override_text(&bar, "app_version_text", (app+(y*3+x) < Apps[category].n_elem) ? (Apps[category].version[app+(y*3+x)].c_str()) : "" );
+			char page[20];
+			sprintf(page,"%d/%d",app+(y*3+x)+1,Apps[category].n_elem);
+			override_text(&menu[1], "page_of", page);
 			switch(Apps[category].type_file[app+(y*3+x)]){
 			 		case PSC_PACKAGE:
 						override_text(&bar, "app_type_text", "Package");
@@ -466,7 +486,16 @@ int main(int argc, char *argv[]){
 	
 	override_text(&menu[0], "ps3_version_edit", get_ps3_version());
 	char space [100];
-	sprintf(space,"%ld/%ld Bytes",get_ps3_free_space(),get_ps3_total_space());
+
+	if(get_ps3_free_space()>1000000000)
+		sprintf(space,"%ld/%ld Gigabytes",get_ps3_free_space()/1000000000,get_ps3_total_space()/1000000000);
+	else if(get_ps3_free_space()>1000000)
+		sprintf(space,"%ld/%ld Megabytes",get_ps3_free_space()/1000000,get_ps3_total_space()/1000000);
+	else if(get_ps3_free_space()>1000)
+		sprintf(space,"%ld/%ld Kilobytes",get_ps3_free_space()/1000,get_ps3_total_space()/1000);
+	else
+		sprintf(space,"%ld/%ld Bytes",get_ps3_free_space(),get_ps3_total_space());
+
 	override_text(&menu[0], "ps3_hdd_free_space_edit", space);
 #ifdef PSCHANNEL_VERSION
 	sprintf(space,"%f",PSCHANNEL_VERSION);
