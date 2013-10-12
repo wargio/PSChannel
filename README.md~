@@ -31,7 +31,7 @@ i want to thanks all the people that helped me on psl1ght irc and a special than
 Compile
 -------
 
-you need RSXGL, EFL and PolarSSL (from my git) libs for PSL1GHT
+you need RSXGL and EFL libs for PSL1GHT
 
 just make
 
