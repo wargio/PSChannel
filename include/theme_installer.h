@@ -16,19 +16,23 @@
 
 */
 
-#ifndef __PLAYSTATION_CHANNEL_UTILS_H__
-#define __PLAYSTATION_CHANNEL_UTILS_H__
+#ifndef __PLAYSTATION_CHANNEL_THEME_INSTALLER_H__
+#define __PLAYSTATION_CHANNEL_THEME_INSTALLER_H__
 
-#include <string>
-#include <ppu-lv2.h>
+#include "unzip.h"
+#include "core_util.h"
 
-using namespace std;
+#define FILE_MISSING		(2)
+#define INSTALLED		(1)
+#define INSTALL_FAILED		(1)
+#define RESTORED		(1)
+#define RESTORE_FAILED		(-1)
 
-uint32_t reboot_sys();
-
-const char* get_ps3_user();
-
-const char* get_ps3_version();
-unsigned long int get_ps3_free_space();
+const char *get_missing_file();
+int install_theme(const char* path_zip, const char* dir_to_install);
+int create_config_file(const char *path, const char *theme_path);
+int restore_original_theme(const char* path, const char* theme_dir);
+const char* get_config_file(const char *path);
+int check_files(const char *paths);
 
 #endif

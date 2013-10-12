@@ -1,0 +1,161 @@
+// 
+images {
+	set {
+	   name: "error.png";
+	   image { 
+	      image: "./pkgfiles/PSC_IMAGES/ERROR.PNG" RAW;
+	      size: 0 0 40 220;
+	   }
+	}
+	set {
+	   name: "dmask.png";
+	   image { 
+	      image: "./pkgfiles/PSC_IMAGES/DOWNLOAD_MASK.PNG" RAW;
+	      size: 0 0 40 220;
+	   }
+	}
+	set {
+	   name: "Background.png";
+	   image { 
+	      image: "./pkgfiles/PSC_IMAGES/BACKGROUND.PNG" RAW;
+	      size: 0 0 1280 720;
+	   }
+	}
+	set {
+	   name: "Menu.png";
+	   image { 
+	      image: "./pkgfiles/PSC_IMAGES/MAIN_MENU.PNG" RAW;
+	      size: 0 0 1280 720;
+	   }
+	}
+
+	set {
+	   name: "Application.png";
+	   image { 
+	      image: "./pkgfiles/ICONS/APPLICATION_ICON.PNG" RAW;
+	      size: 0 0 320 176;
+	   }
+	}
+	set {
+	   name: "BManager.png";
+	   image { 
+	      image: "./pkgfiles/ICONS/BMANAGER_ICON.PNG" RAW;
+	      size: 0 0 320 176;
+	   }
+	}
+	set {
+	   name: "Games.png";
+	   image { 
+	      image: "./pkgfiles/ICONS/GAME_ICON.PNG" RAW;
+	      size: 0 0 320 176;
+	   }
+	}
+	set {
+	   name: "Media.png";
+	   image { 
+	      image: "./pkgfiles/ICONS/MEDIA_ICON.PNG" RAW;
+	      size: 0 0 320 176;
+	   }
+	}
+	set {
+	   name: "System.png";
+	   image { 
+	      image: "./pkgfiles/ICONS/SYSTEM_ICON.PNG" RAW;
+	      size: 0 0 320 176;
+	   }
+	}
+	set {
+	   name: "Option_Icon.png";
+	   image { 
+	      image: "./pkgfiles/ICONS/OPTION_ICON.PNG" RAW;
+	      size: 0 0 320 176;
+	   }
+	}
+	
+	
+	set {
+	   name: "Cross.png";
+	   image { 
+	      image: "./pkgfiles/BUTTONS/BTN_CROSS.PNG" RAW;
+	      size: 0 0 26 26;
+	   }
+	}
+	
+	set {
+	   name: "Circle.png";
+	   image { 
+	      image: "./pkgfiles/BUTTONS/BTN_CIRCLE.PNG" RAW;
+	      size: 0 0 26 26;
+	   }
+	}
+	
+	set {
+	   name: "Square.png";
+	   image { 
+	      image: "./pkgfiles/BUTTONS/BTN_SQUARE.PNG" RAW;
+	      size: 0 0 26 26;
+	   }
+	}
+	
+	set {
+	   name: "Triangle.png";
+	   image { 
+	      image: "./pkgfiles/BUTTONS/BTN_TRIANGLE.PNG" RAW;
+	      size: 0 0 26 26;
+	   }
+	}
+	
+	set {
+	   name: "Arrows.png";
+	   image { 
+	      image: "./pkgfiles/BUTTONS/BTN_ARROWS.PNG" RAW;
+	      size: 0 0 26 26;
+	   }
+	}
+	
+	set {
+	   name: "Start.png";
+	   image { 
+	      image: "./pkgfiles/BUTTONS/BTN_START.PNG" RAW;
+	      size: 0 0 26 26;
+	   }
+	}
+
+	set {
+	   name: "Bar.png";
+	   image { 
+	      image: "./pkgfiles/PSC_IMAGES/BAR.PNG" RAW;
+	      size: 0 0 320 176;
+	   }
+	}
+	set {
+	   name: "OptionBar.png";
+	   image { 
+	      image: "./pkgfiles/PSC_IMAGES/OPBAR.PNG" RAW;
+	      size: 0 0 320 176;
+	   }
+	}
+
+	set {
+	   name: "Option.png";
+	   image { 
+	      image: "./pkgfiles/PSC_IMAGES/OPTIONS_MENU.PNG" RAW;
+	      size: 0 0 1280 720;
+	   }
+	}
+	set {
+	   name: "Submenu1.png";
+	   image { 
+	      image: "./pkgfiles/PSC_IMAGES/SUBMENU1.PNG" RAW;
+	      size: 0 0 1280 720;
+	   }
+	}
+	set {
+	   name: "Submenu_Bar1.png";
+	   image { 
+	      image: "./pkgfiles/PSC_IMAGES/SUBMENU1BAR.PNG" RAW;
+	      size: 0 0 1280 720;
+	   }
+	}
+
+}

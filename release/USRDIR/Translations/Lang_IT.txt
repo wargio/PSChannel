@@ -1,0 +1,26 @@
+Download files principali..
+Download %s...
+Downloading...
+Non sei connesso ad Internet!
+Downloading.. %.2f %%
+Downloading Aggiornamento.. %d Bytes
+Installo..
+Elimino cache..
+Carico informazioni... %d%%
+Carico..
+Info
+Visuale
+Scegli
+ Indietro
+Seleziona
+Esci
+Spazio Libero HDD: 
+Versione: 
+Nome Tema:
+Download 
+Ritorna alla XMB
+Download Completato!
+Download Fallito!
+Vuoi tornare alla XMB?
+Cambia lingua
+

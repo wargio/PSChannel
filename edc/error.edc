@@ -1,20 +1,70 @@
 // compile: edje_cc main_menu_bar.edc
+#include "images.edc"
+
 collections {
 #include "font.edc"
-#include "images.edc"
-   group {
-      name: "main_menu_bar";
 
+   group {
+      name: "update_screen";
       parts {
+
          part {
-            name: "bar_img";
+            name: "background";
+            type: RECT; 
+
+            description {
+               state: "default" 0.0;
+               color: 0 0 0 255;
+
+               rel1 { 
+                  relative: 0.0 0.0;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1.0 1.0;
+                  offset: -1 -1;
+               }
+            }
+         }
+
+         part {
+            name: "background_img";
             type:  IMAGE;
 
 	    description {
-	      state:  "default" 0;
+	      state:  "default" 0.0;
 
 	      image {
-	          normal: "Bar.png";
+	          normal: "Background.png";
+                  middle:  DEFAULT;
+	      }
+
+	      rel1 {
+                  relative: 0.0 0.0;
+                  offset: 0 0;
+              }
+              rel2 {
+                  relative: 1 1;
+                  offset: 0 0;
+              }
+	   }
+         }
+
+      }
+   }
+
+   group {
+      name: "update_message";
+      parts {
+         part {
+            name: "error_img";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0.0;
+
+	      image {
+	          normal: "error.png";
                   middle:  DEFAULT;
 	      }
 
@@ -30,7 +80,7 @@ collections {
          }
 
          part {
-            name: "menu_text";
+            name: "error_text";
             type: TEXT;
             effect: OUTLINE;
             description {
@@ -38,7 +88,7 @@ collections {
                color: 255 255 255 255;
 
                rel1 { 
-                  relative: +0.05 0.71;
+                  relative: 0 -0.6;
                   offset: 0 0;
                }
                rel2 { 
@@ -47,96 +97,124 @@ collections {
                }
                text {
                   font: "SCE PS3 LATIN";
-                  align: 0 0.5;
+                  align: 0.5 0.5;
+                  size: 14;
+                  size_range: 10 14;
+                  text: "error_text";
+               }
+            }
+         }
+
+
+         part {
+            name: "downloading_text";
+            type: TEXT;
+            effect: OUTLINE;
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+               rel1 { 
+                  relative: 0 0;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+               text {
+                  font: "SCE PS3 LATIN";
+                  align: 0.5 0.5;
+                  size: 14;
+                  size_range: 10 14;
+                  text: "error_text";
+               }
+            }
+         }
+
+      }
+   }
+
+
+   group {
+      name: "error_message";
+      parts {
+         part {
+            name: "error_img";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0.0;
+
+	      image {
+	          normal: "error.png";
+                  middle:  DEFAULT;
+	      }
+
+	      rel1 {
+                  relative: 0.0 0.0;
+                  offset: 0 0;
+              }
+              rel2 {
+                  relative: 1 1;
+                  offset: 0 0;
+              }
+	   }
+         }
+
+         part {
+            name: "error_button_text";
+            type: TEXT;
+            effect: OUTLINE;
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+               rel1 { 
+                  relative: 0.1 0.68;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+               text {
+                  font: "SCE PS3 LATIN";
+                  align: 0.5 0.5;
                   size: 16;
                   size_range: 10 16;
-                  text: "text";
-               }
-            }
-         }
-                  
-         part {
-            name: "app_type_text";
-            type: TEXT;
-            effect: OUTLINE;
-            description {
-               state: "default" 0.0;
-               color: 255 255 255 255;
-
-               rel1 { 
-                  relative: 0.69 0.1;
-                  offset: 0 0;
-               }
-               rel2 { 
-                  relative: 0.99 1;
-                  offset: 0 0;
-               }
-               text {
-                  font: "SCE PS3 LATIN";
-                  align: 0 0;
-                  size: 12;
-                  text: "text";
+                  text: "OK";
                }
             }
          }
 
          part {
-            name: "app_version_text";
-            type: TEXT;
-            effect: OUTLINE;
-            description {
-               state: "default" 0.0;
-               color: 255 255 255 255;
-
-               rel1 { 
-                  relative: 0.1 0.1;
-                  offset: 0 0;
-               }
-               rel2 { 
-                  relative: 1 1;
-                  offset: 0 0;
-               }
-               text {
-                  font: "SCE PS3 LATIN";
-                  align: 0 0;
-                  size: 12;
-                  text: "text";
-               }
-            }
-         }
-       
-      }
-   }
-   
-   group {
-      name: "sub_menu_bar2";
-
-      parts {
-         part {
-            name: "bar_img";
+            name: "cross_img";
             type:  IMAGE;
 
 	    description {
 	      state:  "default" 0;
 
 	      image {
-	          normal: "Submenu_Bar1.png";
+	          normal: "Cross.png";
                   middle:  DEFAULT;
 	      }
-
+	      fill {
+	      }
 	      rel1 {
-                  relative: 0.0 0.0;
+                  relative: 0.425 0.7818;
                   offset: 0 0;
-              }
+               }
               rel2 {
-                  relative: 1 1;
+                  relative: 0.4875 0.8954;
                   offset: 0 0;
               }
 	   }
          }
+         
 
          part {
-            name: "app_name_text";
+            name: "error_text";
             type: TEXT;
             effect: OUTLINE;
             description {
@@ -144,7 +222,7 @@ collections {
                color: 255 255 255 255;
 
                rel1 { 
-                  relative: 0.32 0.10;
+                  relative: 0 -0.6;
                   offset: 0 0;
                }
                rel2 { 
@@ -153,16 +231,16 @@ collections {
                }
                text {
                   font: "SCE PS3 LATIN";
-                  align: 0 0;
-                  size: 12;
-                  size_range: 10 16;
-                  text: " ";
+                  align: 0.5 0.5;
+                  size: 14;
+                  size_range: 10 14;
+                  text: "error_text";
                }
             }
          }
-                  
-         part {
-            name: "app_type_text";
+
+        part {
+            name: "error_sub_text";
             type: TEXT;
             effect: OUTLINE;
             description {
@@ -170,32 +248,7 @@ collections {
                color: 255 255 255 255;
 
                rel1 { 
-                  relative: 0.32 0.40;
-                  offset: 0 0;
-               }
-               rel2 { 
-                  relative: 0.99 1;
-                  offset: 0 0;
-               }
-               text {
-                  font: "SCE PS3 LATIN";
-                  align: 0 0;
-                  size: 12;
-                  text: " ";
-               }
-            }
-         }
-
-         part {
-            name: "app_version_text";
-            type: TEXT;
-            effect: OUTLINE;
-            description {
-               state: "default" 0.0;
-               color: 255 255 255 255;
-
-               rel1 { 
-                  relative: 0.32 0.70;
+                  relative: 0 0;
                   offset: 0 0;
                }
                rel2 { 
@@ -204,42 +257,14 @@ collections {
                }
                text {
                   font: "SCE PS3 LATIN";
-                  align: 0 0;
-                  size: 12;
-                  text: " ";
+                  align: 0.5 0.5;
+                  size: 14;
+                  size_range: 10 14;
+                  text: "error_text";
                }
             }
          }
-       
-      }
-   }
-   
-      group {
-      name: "option_menu_bar";
 
-      parts {
-         part {
-            name: "bar_img";
-            type:  IMAGE;
-
-	    description {
-	      state:  "default" 0;
-
-	      image {
-	          normal: "OptionBar.png";
-                  middle:  DEFAULT;
-	      }
-
-	      rel1 {
-                  relative: 0.0 0.0;
-                  offset: 0 0;
-              }
-              rel2 {
-                  relative: 1 1;
-                  offset: 0 0;
-              }
-	   }
-         }
       }
    }
 

@@ -1,0 +1,25 @@
+Downloaden Main Files ..
+Het downloaden van% s ...
+Downloaden ...
+Geen internetverbinding
+Downloaden .. % .2 F%%
+Downloaden update .. % d bytes
+Installeren ..
+Het verwijderen van cache ..
+Laden informations ... % d%%
+Loading ..
+  Info
+          Weergave wijzigen
+Kiezen
+Terug
+Kiezen
+   Uitgang
+HDD Vrije ruimte:
+Versie:
+Thema Naam:
+Download
+Uitgang naar XMB
+Download Completed!
+Download Failed!
+Wilt u uitgang naar het XMB?
+Taal wijzigen

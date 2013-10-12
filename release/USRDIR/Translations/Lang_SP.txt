@@ -1,0 +1,25 @@
+Descarga de archivos principales ..
+Descargando% s ...
+Descarga de ...
+No hay conexion a internet
+Descarga de .. % .2 F%%
+Descarga de actualizacion .. % d Bytes
+Instalacion ..
+Borrar cache ..
+Cargando informacion ... % d%%
+Cargando ..
+Info
+Cambiar vista
+Elegir
+    Espalda
+    Seleccionar
+  Salida
+Espacio libre en disco duro:
+Versión:
+Nombre del Tema:
+    Descargar
+Salida al XMB
+Descarga completa!
+Descarga Error!
+¿Quieres salir al XMB?
+    Cambiar idioma

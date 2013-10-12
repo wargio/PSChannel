@@ -1,4 +1,15 @@
 // compile: edje_cc edje_example.edc
+
+images {
+	set {
+	   name: "brewology.png";
+	   image { 
+	      image: "./pkgfiles/brewology.png" RAW;
+	      size: 0 0 1280 720;
+	   }
+	}
+}
+
 collections {
 #include "font.edc"
    group {
@@ -27,7 +38,30 @@ collections {
                }
             }
          }
+/*
+         part {
+            name: "hostsite";
+            type:  IMAGE;
 
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "brewology.png";
+                  middle:  DEFAULT;
+	      }
+
+	      rel1 {
+                  relative: 0.1 0.8;
+                  offset: 0 0;
+               }
+              rel2 {
+                  relative: 0.30 0.95;
+                  offset: 0 0;
+              }
+	   }
+         }
+*/
          part {
             name: "information_text1";
             type: TEXT;
@@ -120,6 +154,71 @@ collections {
                   font: "SCE PS3 LATIN"; //to be changed with PS3 fonts
                   size: 14;
                   text: "This is a free software under GPL3, if you paid, you have been scammed.";
+               }
+            }
+         }
+         
+         part {
+            name: "information_text4";
+            type: TEXT;
+            mouse_events: 1; // we want to change the color on mouse-over
+
+            // 2 states, one "default" and another "over" to be used
+            // on mouse over effect
+
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255; // white
+
+               // define part coordinates:
+
+               rel1 { // top-left at (WIDTH * 0.1 + 5, HEIGHT * 0.2 + 10)
+                  relative: 0 0;
+                  offset: 0 0;
+               }
+               rel2 { // bottom-right at (WIDTH * 0.9 - 6, HEIGHT * 0.8 - 11)
+                  relative: 1 1;
+                  offset: 0 +120;
+               }
+
+               // define text specific state details
+               text {
+                  font: "SCE PS3 LATIN"; //to be changed with PS3 fonts
+                  size: 14;
+                  text: "Server side components provided by The Brewology Store (Brewology.com)";
+               }
+            }
+         }
+         
+         
+         part {
+            name: "information_for_devs";
+            type: TEXT;
+            mouse_events: 1; // we want to change the color on mouse-over
+
+            // 2 states, one "default" and another "over" to be used
+            // on mouse over effect
+
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255; // white
+
+               // define part coordinates:
+
+               rel1 { // top-left at (WIDTH * 0.1 + 5, HEIGHT * 0.2 + 10)
+                  relative: 0 0;
+                  offset: 0 0;
+               }
+               rel2 { // bottom-right at (WIDTH * 0.9 - 6, HEIGHT * 0.8 - 11)
+                  relative: 1 1;
+                  offset: 0 +170;
+               }
+
+               // define text specific state details
+               text {
+                  font: "SCE PS3 LATIN"; //to be changed with PS3 fonts
+                  size: 12;
+                  text: "To add/update your homebrew, please contact MonkeyMaximus on the Brewology forums for developer access.";
                }
             }
          }

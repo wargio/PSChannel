@@ -1,0 +1,25 @@
+Téléchargement Accueil Fichiers ..
+Téléchargement de% s ...
+Téléchargement ...
+Pas de connexion Internet
+Téléchargement .. % .2 F%%
+Téléchargement de mise à jour .. % d octets
+Installation ..
+Suppression de cache ..
+Chargement des informations ... % d%%
+Chargement ..
+    Infos
+    Changer la vue
+Choisir
+ Retour
+       Sélectionner
+   Quitter
+Espace libre disque dur:
+Version:
+Thème:
+Télécharger
+Sortie sur XMB
+Téléchargement terminé!
+Echec du téléchargement!
+Voulez-vous quitter le XMB?
+        Changer la langue

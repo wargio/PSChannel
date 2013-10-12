@@ -9,7 +9,7 @@ endif
 
 include $(PSL1GHT)/ppu_rules
 
-PSCHANNEL_VERSION = 	1.01
+PSCHANNEL_VERSION = 	1.11
 
 #---------------------------------------------------------------------------------
 # TARGET is the name of the output
@@ -27,7 +27,7 @@ ICON0		:=	$(CURDIR)/ICON0.PNG
 SFOXML		:=	$(CURDIR)/sfo.xml
 PKGFILES	:=	$(CURDIR)/release
 
-TITLE		:=	Playstation Channel
+TITLE		:=	PSChannel
 APPID		:=	PSCHANNEL
 CONTENTID	:=	UP0001-$(APPID)_00-0000000000000000
 
@@ -36,7 +36,19 @@ CONTENTID	:=	UP0001-$(APPID)_00-0000000000000000
 #---------------------------------------------------------------------------------
 
 CFLAGS		=	-mcpu=cell $(MACHDEP) $(INCLUDE) \
-			`pkg-config edje ecore ecore-psl1ght ecore-evas ecore-input-evas ecore-input ecore-file ecore-con libcurl evas evas-psl1ght eet embryo --cflags` -DPSCHANNEL_VERSION=$(PSCHANNEL_VERSION)
+			-I$(PS3DEV)/portlibs/ppu/include/edje-1 \
+			-I$(PS3DEV)/portlibs/ppu/include/ecore-1 \
+			-I$(PS3DEV)/portlibs/ppu/include \
+			-I$(PS3DEV)/portlibs/ppu/include/embryo-1 \
+			-I$(PS3DEV)/portlibs/ppu/include/evas-1 \
+			-I$(PS3DEV)/portlibs/ppu/include/eet-1 \
+			-I$(PS3DEV)/portlibs/ppu/include/eina-1 \
+			-I$(PS3DEV)/portlibs/ppu/include/eina-1/eina \
+			-I$(PS3DEV)/portlibs/ppu/include/escape-0 \
+			-I$(PS3DEV)/portlibs/ppu/include/libpng14 \
+			-I$(PS3DEV)/portlibs/ppu/include/SDL \
+			-I$(PS3DEV)/portlibs/ppu/include/freetype2 \
+			-DPSCHANNEL_VERSION=$(PSCHANNEL_VERSION)
 CXXFLAGS	=	$(CFLAGS)
 
 LDFLAGS		=	$(MACHDEP) -Wl,-Map,$(notdir $@).map
@@ -44,12 +56,14 @@ LDFLAGS		=	$(MACHDEP) -Wl,-Map,$(notdir $@).map
 #---------------------------------------------------------------------------------
 # any extra libraries we wish to link with the project
 #---------------------------------------------------------------------------------
-LIBS	:=	-lz -lzip \
-		`pkg-config edje ecore ecore-psl1ght ecore-evas ecore-input-evas ecore-input ecore-file ecore-con libcurl evas evas-psl1ght eet embryo lua fontconfig --libs`\
-		-lcares -lexpat -lSDL \
+LIBS	:=	-lz -lzip -ledje -lecore -lecore_psl1ght -lecore_evas \
+		-lecore_input_evas -lecore_input -lecore_file -lecore_con -lcurl \
+		-lsysutil -levas -leina -lescape -lnet -lsysmodule -liberty -leet \
+		-lembryo -llua -lm -lfontconfig -lcares -lexpat -lSDL \
 		-lecore_psl1ght -lecore_sdl -lecore_imf -lecore_imf_evas\
-		-lspurs -lgem -lrsx -lgcm_sys -lrt -lcamera -laudio -lio -llv2 -lsysutil -lsysmodule -lpng -lpngdec -ljpeg -ljpgdec -lz -lzip  \
-		-lfreetype
+		-lspurs -lgem -lrsx -lgcm_sys -lrt -lcamera -laudio -lio -llv2 \
+		-lsysutil -lsysmodule -lpng -lpngdec -ljpeg -ljpgdec -lz -lzip  \
+		-lfreetype -lsysfs -lpolarssl
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
@@ -120,12 +134,7 @@ $(BUILD): edj
 #---------------------------------------------------------------------------------
 clean:
 	@echo clean ...
-	@rm -fr $(BUILD) $(OUTPUT).elf $(OUTPUT).self release/theme/*.edj *.pkg  *.self
-	@make --no-print-directory -C edc/ clean
-
-#---------------------------------------------------------------------------------
-clean-edj:
-	@echo clean edj ...
+	@rm -fr $(BUILD) $(OUTPUT).elf $(PKGFILES)/USRDIR/theme/*.edj *.self *.pkg
 	@make --no-print-directory -C edc/ clean
 
 #---------------------------------------------------------------------------------
@@ -134,10 +143,16 @@ run:
 
 #---------------------------------------------------------------------------------
 edj:
+	@echo "Building edj."
 	@make --no-print-directory -C edc/
-
 #---------------------------------------------------------------------------------
 pkg:	$(BUILD) $(OUTPUT).pkg
+
+#---------------------------------------------------------------------------------
+debug: pkg
+	@clear
+	@echo "Ready.."
+	@nc -l -u -p 18194
 
 #---------------------------------------------------------------------------------
 else

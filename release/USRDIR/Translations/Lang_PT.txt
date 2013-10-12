@@ -1,0 +1,26 @@
+A Descarregar Ficheiros Principais..
+A Descarregar %s...
+A Descarregar...
+Sem conexao a Internet
+A Descarregar.. %.2f %%
+A Descarregar Atualizacao.. %d Bytes
+A Instalar..
+A Apagar a cache..
+A Carregar Informacoes... %d%%
+A Carregar..
+               Informacao
+Mudar Vista
+Escolher
+     Para Tras
+     Seleccionar
+Sair
+Espaco Livre no Disco Rigido: 
+Versao: 
+Nome do Tema:
+     Download 
+Sair para o XMB
+Download Completo!
+Download Falhou!
+Deseja sair para o XMB?
+           Mudar de Linguagem
+

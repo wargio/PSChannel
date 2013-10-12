@@ -44,3 +44,18 @@ void move_image(EFL_Image *img, int x, int y){
 	evas_object_move(img->obj, x, y);
 }
 
+void resize_image(EFL_Image *img, int x, int y, int resize_w, int resize_h){
+	evas_object_move(img->obj, x, y);
+	evas_object_image_fill_set(img->obj, 0, 0, resize_w, resize_h);
+	evas_object_resize(img->obj, resize_w, resize_h);
+//	evas_object_show(img->obj);
+}
+
+void resize_image(EFL_Image *img, int x, int y){
+	evas_object_move(img->obj, x, y);
+	evas_object_image_fill_set(img->obj, 0, 0, img->width, img->height);
+	evas_object_resize(img->obj, img->width, img->height);
+//	evas_object_show(img->obj);
+}
+
+

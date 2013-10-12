@@ -1,0 +1,25 @@
+Herunterladen Hauptseite Dateien ..
+Herunterladen% s ...
+Herunterladen ...
+Keine Internetverbindung
+Herunterladen .. % .2 F%%
+Herunterladen aktualisieren .. % d Bytes
+Installieren ..
+Löschen von Cache ..
+Lädt Informationen ... % d%%
+Laden ..
+  Info
+        Ansicht wechseln
+Wählen
+  Zurück
+Wählen
+       Verlassen
+HDD Free Space:
+Version:
+Theme Name:
+  Herunterladen
+Ausgang zum XMB
+Download abgeschlossen!
+Laden fehlgeschlagen!
+Möchten Sie die XMB beenden?
+          Sprache wechseln

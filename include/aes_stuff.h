@@ -16,31 +16,8 @@
 
 */
 
-#ifndef __PLAYSTATION_CHANNEL_DOWNLOAD_CORE_H__
-#define __PLAYSTATION_CHANNEL_DOWNLOAD_CORE_H__
+#include "aes.h"
+#include "core_util.h"
 
-#include "core.h"
-#include <Ecore_File.h>
-#include <net/net.h>
-#include <sys/stat.h>
-#include <sys/file.h>
-#include <lv2/sysfs.h>
-#include <string>
+void decrypt_xml(const char* in, const char* out);
 
-using namespace std;
-
-void init_core_file();
-
-void stop_core_file();
-
-int file_exist(const char* file);
-int file_delete(const char* file);
-int dir_delete(const char* file);
-int dir_exist(const char* file);
-int dir_make(const char* file);
-int dir_recursive_delete(const char* file);
-
-int find_usb();
-string *get_package_list(const char *file);
-
-#endif

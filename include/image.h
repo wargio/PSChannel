@@ -39,5 +39,7 @@ void create_image_obj(EFL_Core *core, EFL_Image *img, const char* path_image, in
 void draw_image(EFL_Image *img, int x, int y);
 void draw_image(EFL_Image *img, int x, int y, int resize_w, int resize_h);
 void move_image(EFL_Image *img, int x, int y);
+void resize_image(EFL_Image *img, int x, int y, int resize_w, int resize_h);
+void resize_image(EFL_Image *img, int x, int y);
 
 #endif

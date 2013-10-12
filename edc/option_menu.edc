@@ -40,6 +40,14 @@ images {
 	}
 	
 	set {
+	   name: "Triangle.png";
+	   image { 
+	      image: "./pkgfiles/BUTTONS/BTN_TRIANGLE.PNG" RAW;
+	      size: 0 0 26 26;
+	   }
+	}
+	
+	set {
 	   name: "Start.png";
 	   image { 
 	      image: "./pkgfiles/BUTTONS/BTN_START.PNG" RAW;
@@ -99,32 +107,30 @@ collections {
 	   }
          }
 
-/*         
          part {
-            name: "cross_img";
+            name: "triangle_img";
             type:  IMAGE;
 
 	    description {
 	      state:  "default" 0;
 
 	      image {
-	          normal: "Cross.png";
+	          normal: "Triangle.png";
                   middle:  DEFAULT;
 	      }
 	      fill {
 	      }
 	      rel1 {
-                  relative: 0.2890625 0.83;
+                  relative: 0.5921875 0.83;
                   offset: 0 0;
                }
               rel2 {
-                  relative: 0.309375 0.8674;
+                  relative: 0.6125 0.8674;
                   offset: 0 0;
               }
 	   }
          }
-*/
-  
+
          part {
             name: "circle_img";
             type:  IMAGE;
@@ -173,9 +179,11 @@ collections {
               }
 	   }
          }
+*/
          //text
+         
          part {
-            name: "cross_text";
+            name: "triangle_text";
             type: TEXT;
 
             description {
@@ -183,7 +191,7 @@ collections {
                color: 255 255 255 255;
 
                rel1 { 
-                  relative: -0.309375 0.7;
+                  relative: 0.33 0.7;
                   offset: 0 0;
                }
                rel2 { 
@@ -195,12 +203,11 @@ collections {
                   font: "SCE PS3 LATIN"; 
                   size: 16;
                   size_range: 10 16;
-                  text: "Save";
+                  text: "Install Theme/Translations";
                }
             }
          }
-         */
-         
+
          part {
             name: "circle_text";
             type: TEXT;

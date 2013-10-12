@@ -16,19 +16,24 @@
 
 */
 
-#ifndef __PLAYSTATION_CHANNEL_UTILS_H__
-#define __PLAYSTATION_CHANNEL_UTILS_H__
+#ifndef __DEBUG_STUFF_H__
+#define __DEBUG_STUFF_H__
 
-#include <string>
-#include <ppu-lv2.h>
+#include <stdio.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
 
-using namespace std;
+#include <net/net.h>
+#include <netinet/in.h>
 
-uint32_t reboot_sys();
+#define DEBUG_IP   "192.168.1.137"
+#define DEBUG_PORT 18194
 
-const char* get_ps3_user();
+void debugPrintf(const char* fmt, ...);
 
-const char* get_ps3_version();
-unsigned long int get_ps3_free_space();
+void debugInit();
+
+void debugStop();
 
 #endif

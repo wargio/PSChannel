@@ -16,19 +16,34 @@
 
 */
 
-#ifndef __PLAYSTATION_CHANNEL_UTILS_H__
-#define __PLAYSTATION_CHANNEL_UTILS_H__
+#ifndef __PLAYSTATION_CHANNEL_UTIL_CORE_H__
+#define __PLAYSTATION_CHANNEL_UTIL_CORE_H__
 
+#include "core.h"
+#include <Ecore_File.h>
+#include <net/net.h>
+#include <sys/stat.h>
+#include <sys/file.h>
+#include <lv2/sysfs.h>
 #include <string>
-#include <ppu-lv2.h>
 
 using namespace std;
 
-uint32_t reboot_sys();
+void init_core_file();
 
-const char* get_ps3_user();
+void stop_core_file();
 
-const char* get_ps3_version();
-unsigned long int get_ps3_free_space();
+int file_exist(const char* file);
+int file_delete(const char* file);
+int dir_delete(const char* file);
+int dir_exist(const char* file);
+int dir_make(const char* file);
+int dir_recursive_delete(const char* file);
+int get_size(const char *path);
+
+int file_rename(const char* old_file, const char* new_file);
+int file_copy(const char *source, const char *dest);
+int find_usb();
+string *get_package_list(const char *file);
 
 #endif

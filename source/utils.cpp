@@ -1,4 +1,5 @@
 #include "utils.h"
+#include <lv2/sysfs.h>
 #include <string>
 #include <stdio.h>
 
@@ -58,14 +59,9 @@ const char* get_ps3_version(){
 }
 
 unsigned long int get_ps3_free_space(){
-	device_info_t hdd;
-	sys_storage_get_device_info(HDD_DEVICE,&hdd);
-	return (hdd.total_sectors-hdd.sector_size)*512;
-}
-
-unsigned long int get_ps3_total_space(){
-	device_info_t hdd;
-	sys_storage_get_device_info(HDD_DEVICE,&hdd);
-	return hdd.total_sectors*512;
+	u32 blockSize;
+	u64 freeBlocks;
+	sysFsGetFreeSize("/dev_hdd0/", &blockSize, &freeBlocks);
+	return ((u64)blockSize)*freeBlocks;
 }
 

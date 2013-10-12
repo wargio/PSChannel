@@ -94,6 +94,7 @@ images {
 
 collections {
 #include "font.edc"
+#include "images.edc"
    group {
       name: "menu";
 
@@ -277,6 +278,30 @@ collections {
          }
          
          part {
+            name: "square_img";
+            type:  IMAGE;
+
+	    description {
+	      state:  "default" 0;
+
+	      image {
+	          normal: "Square.png";
+                  middle:  DEFAULT;
+	      }
+	      fill {
+	      }
+	      rel1 {
+                  relative: 0.14 0.83;
+                  offset: 0 0;
+               }
+              rel2 {
+                  relative: 0.1603125 0.8674;
+                  offset: 0 0;
+              }
+	   }
+         }
+         
+         part {
             name: "cross_img";
             type:  IMAGE;
 
@@ -372,6 +397,34 @@ collections {
 	   }
          }
          //text
+         
+         
+         part {
+            name: "square_text";
+            type: TEXT;
+
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+               rel1 { 
+                  relative: -0.65 0.7;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+
+               text {
+                  font: "SCE PS3 LATIN"; 
+                  size: 16;
+                  size_range: 10 16;
+                  text: "Infossss";
+               }
+            }
+         }
+         
          part {
             name: "cross_text";
             type: TEXT;
@@ -397,33 +450,6 @@ collections {
                }
             }
          }
-
-         part {
-            name: "error_text";
-            type: TEXT;
-
-            description {
-               state: "default" 0.0;
-               color: 255 255 255 255;
-
-
-               rel1 { 
-                  relative: -0.4 -0.4;
-                  offset: 0 0;
-               }
-               rel2 { 
-                  relative: 1 1;
-                  offset: 0 0;
-               }
-
-               text {
-                  font: "SCE PS3 LATIN"; 
-                  size: 16;
-                  size_range: 10 16;
-                  text: "null";
-               }
-            }
-         }
          
          part {
             name: "circle_text";
@@ -435,7 +461,7 @@ collections {
 
 
                rel1 { 
-                  relative: 0 0.7;
+                  relative: 0.0 0.7;
                   offset: 0 0;
                }
                rel2 { 
@@ -461,7 +487,7 @@ collections {
                color: 255 255 255 255;
 
                rel1 { 
-                  relative: 0.31 0.7;
+                  relative: 0.315 0.7;
                   offset: 0 0;
                }
                rel2 { 
@@ -498,6 +524,33 @@ collections {
                   size: 16;
                   size_range: 10 16;
                   text: "Exit";
+               }
+            }
+         }
+         
+         part {
+            name: "error_text";
+            type: TEXT;
+	    effect: OUTLINE;
+            description {
+               state: "default" 0.0;
+               color: 255 255 255 255;
+
+
+               rel1 { 
+                  relative: -0.6 0.9;
+                  offset: 0 0;
+               }
+               rel2 { 
+                  relative: 1 1;
+                  offset: 0 0;
+               }
+
+               text {
+                  font: "SCE PS3 LATIN"; 
+                  size: 12;
+                  size_range: 10 16;
+                  text: "null";
                }
             }
          }

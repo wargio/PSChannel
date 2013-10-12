@@ -16,16 +16,24 @@
 
 */
 
-#include "core_download.h"
+#include "core_util.h"
+#include <fstream>
+#include <string.h>
+#include <sysmodule/sysmodule.h>
+using namespace std;
+
+
 static string *package_names = NULL;
 
 void init_core_file(){
 	ecore_file_init();
 	netInitialize();
+	sysModuleLoad(SYSMODULE_FS);
 }
 
 void stop_core_file(){
 	netDeinitialize();	
+	sysModuleUnload(SYSMODULE_FS);
 	ecore_file_shutdown();
 }
 
@@ -83,13 +91,64 @@ int find_usb(){
 	char path[15];
 	s32 fd;
 	for(usb_num=0;usb_num<10;usb_num++){
-		sprintf(path,"/dev_usb00%d/",usb_num);
+		sprintf(path,"/dev_usb%03d/",usb_num);
 		if(sysLv2FsOpenDir(path,&fd) == 0)
 			goto close_dir;
 	}
 	return -1;
 close_dir:
 	return usb_num;
+}
+
+int file_rename(const char* old_file, const char* new_file){
+	return sysLv2FsLink(old_file, new_file);
+}
+
+#define BLOCK_SIZE	0x1000
+
+int file_copy(const char *source, const char *dest){
+	s32 src = -1;
+	s32 dst = -1;
+	sysFSStat stats;
+
+	char buffer[BLOCK_SIZE];
+	u64  i;
+	s32  ret;
+
+	ret = sysLv2FsOpen(source, SYS_O_RDONLY, &src, 0, NULL, 0);
+	if (ret)
+		goto out;
+
+	ret = sysLv2FsOpen(dest, SYS_O_WRONLY | SYS_O_CREAT | SYS_O_TRUNC, &dst, 0, NULL, 0);
+	if (ret)
+		goto out;
+
+	sysLv2FsChmod(dest, S_IFMT | 0777);
+
+	sysLv2FsFStat(src, &stats);
+
+	for (i = 0; i < stats.st_size;) {
+		u64 pos, read, written;
+
+		sysLv2FsLSeek64(src, i, 0, &pos);
+		sysLv2FsLSeek64(dst, i, 0, &pos);
+
+		ret = sysLv2FsRead(src, buffer, sizeof(buffer), &read);
+		if (ret || !read)
+			break;
+
+		ret = sysLv2FsWrite(dst, buffer, read, &written);
+		if (ret || !written)
+			break;
+
+		i += written;
+	}
+
+out:
+	if (src >= 0) sysLv2FsClose(src);
+	if (dst >= 0) sysLv2FsClose(dst);
+
+	return ret;
 }
 
 string *get_package_list(const char *file){
@@ -124,5 +183,19 @@ string *get_package_list(const char *file){
 		}while(num_pkg>0);
 		return package_names;
 	}
+}
+
+
+int get_size(const char *path){
+	int length;
+	fstream file;
+	file.open(path,ios::in|ios::binary);
+	if(!file.fail()){
+		file.seekg(0, ios::end);
+		length = file.tellg();
+		file.close();
+		return length;
+	}
+	return 0;
 }
 
